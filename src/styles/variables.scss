@@ -1,6 +1,19 @@
-$font-primary: 'Arial', sans-serif;
+$font-primary: "Arial", sans-serif;
 $bg-color: #ffffff;
-$text-primary: #2a2b42; 
-$text-secondary: #d00711;   
+$text-primary: #2a2b42;
+$text-secondary: #ffffff;
+$color-accent: #d00711;
 $color-primary: #15161d;
 $color-secondary: #1e1f29;
+$border-color: #f3f4f7;
+
+:root {
+  --font-primary: #{$font-primary};
+  --bg-color: #{$bg-color};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --color-accent: #{$color-accent};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --border-color: #{$border-color};
+}

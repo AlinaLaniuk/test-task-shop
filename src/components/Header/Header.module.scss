@@ -1,0 +1,57 @@
+.topbarItem {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.contactsContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.topbar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-secondary);
+  color: var(--text-secondary);
+}
+
+.main {
+  height: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  border-bottom: 4px solid var(--color-accent);
+  color: var(--text-secondary);
+  h1 {
+    color: var(--text-secondary);
+    span {
+      color: var(--color-accent);
+    }
+  }
+  .banner {
+    width: 600px;
+    height: 70px;
+    background-color: darkgrey;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  height: 70px;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  gap: 20px;
+  color: var(--text-primary);
+}

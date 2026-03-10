@@ -1,0 +1,15 @@
+$icon-sizes: (
+  s: 16px,
+  m: 24px,
+  l: 32px
+);
+
+.iconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sizeS { width: map-get($icon-sizes, s); height: map-get($icon-sizes, s); }
+.sizeM { width: map-get($icon-sizes, m); height: map-get($icon-sizes, m); }
+.sizeL { width: map-get($icon-sizes, l); height: map-get($icon-sizes, l); }
