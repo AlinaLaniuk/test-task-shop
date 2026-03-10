@@ -1,16 +1,19 @@
 "use client";
 
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import LoginIcon from "../icons/LoginIcon";
 import MailIcon from "../icons/MailIcon";
 import PhoneIcon from "../icons/PhoneIcon";
 import PointerIcon from "../icons/PointerIcon";
+import { useUserStore } from "../../store/useStore";
 import styles from "./Header.module.scss";
+import { LoginResponse } from "@/types/auth.types";
 
 export default function Header() {
+  const user = useUserStore((state) => state.user);
   const router = useRouter();
 
-  const handleClick = () => {
+  const onClick = () => {
     router.push("/login");
   };
 
@@ -32,10 +35,7 @@ export default function Header() {
               1734 Stonecoal Road
             </li>
           </ul>
-          <button onClick={handleClick} className={styles.topbarItem}>
-            <LoginIcon />
-            Login
-          </button>
+          {user ? <User user={user} /> : <LoginButton onClick={onClick} />}
         </div>
       </div>
       <div className={styles.main}>
@@ -62,5 +62,23 @@ export default function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+function User({ user }: { user: LoginResponse }) {
+  return (
+    <div className={styles.topbarItem}>
+      <LoginIcon />
+      {user?.firstName} {user?.lastName}
+    </div>
+  );
+}
+
+function LoginButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button onClick={onClick} className={styles.topbarItem}>
+      <LoginIcon />
+      Login
+    </button>
   );
 }
