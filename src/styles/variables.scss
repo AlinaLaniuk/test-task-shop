@@ -6,6 +6,8 @@ $color-accent: #d00711;
 $color-primary: #15161d;
 $color-secondary: #1e1f29;
 $border-color: #f3f4f7;
+$border-radius: 7px;
+$color-dangerous: rgb(150, 0, 0);
 
 :root {
   --font-primary: #{$font-primary};
@@ -16,4 +18,6 @@ $border-color: #f3f4f7;
   --color-primary: #{$color-primary};
   --color-secondary: #{$color-secondary};
   --border-color: #{$border-color};
+  --border-radius: #{$border-radius};
+  --color-dangerous: #{$color-dangerous};
 }

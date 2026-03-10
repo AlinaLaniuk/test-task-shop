@@ -1,0 +1,13 @@
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.formHeader{
+  font-size: 30px;
+  font-weight: 600;
+}

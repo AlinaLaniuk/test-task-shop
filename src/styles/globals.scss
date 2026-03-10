@@ -16,8 +16,12 @@ a {
 }
 
 button {
+  all: unset;
   cursor: pointer;
-  font-family: inherit;
+}
+
+input {
+  all: unset;
 }
 
 ul {

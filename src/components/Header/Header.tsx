@@ -1,5 +1,6 @@
-'use client'
+"use client";
 
+import { useRouter } from "next/navigation"; 
 import LoginIcon from "../icons/LoginIcon";
 import MailIcon from "../icons/MailIcon";
 import PhoneIcon from "../icons/PhoneIcon";
@@ -7,7 +8,12 @@ import PointerIcon from "../icons/PointerIcon";
 import styles from "./Header.module.scss";
 
 export default function Header() {
-  console.log("HEADER RENDER");
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/login");
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.topbar}>
@@ -26,10 +32,10 @@ export default function Header() {
               1734 Stonecoal Road
             </li>
           </ul>
-          <div className={styles.topbarItem}>
+          <button onClick={handleClick} className={styles.topbarItem}>
             <LoginIcon />
             Login
-          </div>
+          </button>
         </div>
       </div>
       <div className={styles.main}>
