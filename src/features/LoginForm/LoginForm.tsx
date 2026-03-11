@@ -1,5 +1,6 @@
 "use client";
 
+import { ChangeEvent } from "react";
 import useLogin from "./useLogin";
 import Button from "../../components/Button/Button";
 import styles from "./LoginForm.module.scss";
@@ -15,7 +16,7 @@ export default function LoginFrom() {
         placeholder="Username"
         value={username.value}
         autoComplete="username"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
           updateUsername(event.target.value)
         }
       />
@@ -29,7 +30,7 @@ export default function LoginFrom() {
         placeholder="Password"
         value={password.value}
         autoComplete="current-password"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
           updatePassword(event.target.value)
         }
       />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { validateTextField } from "./validation";
 import { login } from "../../services/auth.api";
 import { useUserStore } from "../../store/useUserStore";
@@ -19,7 +19,7 @@ export default function useLogin() {
     setPassword({ value: value, isError: !validateTextField(value) });
   }
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (username.isError || password.isError) {

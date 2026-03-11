@@ -1,8 +1,9 @@
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import styles from "./Button.module.scss";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: "s" | "m" | "l";
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function Button({ size = "m", children, className = "", ...props }: ButtonProps) {

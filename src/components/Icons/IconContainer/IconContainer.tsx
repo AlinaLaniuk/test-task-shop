@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import styles from "./IconContainer.module.scss";
 
 interface IconContainerProps {
   size?: "s" | "m" | "l";
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function IconContainer({ size = "s", children }: IconContainerProps) {

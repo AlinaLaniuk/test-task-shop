@@ -9,9 +9,10 @@ import { useErrorStore } from "@/store/useErrorStore";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { useEffect } from "react";
+import { ReactNode } from "react";
 import "../styles/globals.scss";
 
-export default function ClientWrapper({ children }: { children: React.ReactNode }) {
+export default function ClientWrapper({ children }: { children: ReactNode }) {
   const { setUser, user, logout } = useUserStore();
   const { data, loading } = useAuth();
   const error = useErrorStore((s) => s.message);
@@ -19,7 +20,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     if (data) setUser(data);
-  }, [data]);
+  }, [data, setUser]);
 
   const handleRetry = () => {
     setError(null);
