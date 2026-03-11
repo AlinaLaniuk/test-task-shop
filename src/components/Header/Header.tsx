@@ -1,17 +1,20 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import LoginIcon from "../lib/Icons/LoginIcon";
-import MailIcon from "../lib/Icons/MailIcon";
-import PhoneIcon from "../lib/Icons/PhoneIcon";
-import PointerIcon from "../lib/Icons/PointerIcon";
-import { useUserStore } from "../../store/useStore";
+import LoginIcon from "../Icons/LoginIcon";
+import MailIcon from "../Icons/MailIcon";
+import PhoneIcon from "../Icons/PhoneIcon";
+import PointerIcon from "../Icons/PointerIcon";
 import Link from "next/link";
 import styles from "./Header.module.scss";
 
-export default function Header() {
-  const user = useUserStore((state) => state.user);
-  const logout = useUserStore((state) => state.logout);
+interface HeaderProps {
+  logout: () => void;
+  name?: string;
+  isAuth: boolean;
+}
+
+export default function Header({ logout, name = "", isAuth }: HeaderProps) {
   const router = useRouter();
 
   const handleLogin = () => {
@@ -20,7 +23,6 @@ export default function Header() {
 
   const handleLogout = () => {
     logout();
-    console.log("user", user);
     router.push("/");
   };
 
@@ -42,8 +44,8 @@ export default function Header() {
               1734 Stonecoal Road
             </li>
           </ul>
-          {user ? (
-            <User onClick={handleLogout} name={`${user.firstName} ${user.lastName}`} />
+          {isAuth ? (
+            <User onClick={handleLogout} name={name} />
           ) : (
             <LoginButton onClick={handleLogin} />
           )}

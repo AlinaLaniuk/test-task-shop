@@ -1,11 +1,11 @@
 "use client";
 
 import { Product } from "@/types/product.types";
-import Card from "../ProductCard/ProductCard";
+import Card from "../../components/ProductCard/ProductCard";
 import useProducts from "./useProducts";
 import { useUserStore } from "../../store/useStore";
 import styles from "./Products.module.scss";
-import Loader from "../lib/Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 
 export default function Products() {
   const { data, loading, error } = useProducts();

@@ -1,7 +1,7 @@
 "use client";
 
 import useAuth from "./useAuth";
-import Button from "../lib/Button/Button";
+import Button from "../../components/Button/Button";
 import styles from "./LoginForm.module.scss";
 
 export default function LoginFrom() {

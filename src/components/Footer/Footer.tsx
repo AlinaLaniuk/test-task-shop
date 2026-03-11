@@ -1,12 +1,14 @@
-import { useUserStore } from "@/store/useStore";
 import styles from "./Footer.module.scss";
 
-export default function Footer() {
-  const user = useUserStore((state) => state.user);
+interface FooterProps {
+  email?: string;
+}
+
+export default function Footer({ email }: FooterProps) {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
-      {user ? `${currentYear} | Logged as ${user?.email}` : currentYear}
+      {email ? `${currentYear} | Logged as ${email}` : currentYear}
     </footer>
   );
 }

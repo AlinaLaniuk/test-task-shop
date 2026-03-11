@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./ProductCard.module.scss";
-import Button from "../lib/Button/Button";
+import Button from "../Button/Button";
 
 interface ProductCardProps {
   imgSrc: string;
