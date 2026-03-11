@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { validateTextField } from "./validation";
 import { login } from "../../services/auth.api";
-import { useUserStore } from "../../store/useStore";
+import { useUserStore } from "../../store/useUserStore";
 import { useRouter } from "next/navigation";
 
-export default function useAuth() {
+export default function useLogin() {
   const [username, setUsername] = useState({ value: "", isError: false });
   const [password, setPassword] = useState({ value: "", isError: false });
   const [authError, setAuthError] = useState("");

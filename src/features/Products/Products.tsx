@@ -3,9 +3,10 @@
 import { Product } from "@/types/product.types";
 import Card from "../../components/ProductCard/ProductCard";
 import useProducts from "./useProducts";
-import { useUserStore } from "../../store/useStore";
+import { useUserStore } from "../../store/useUserStore";
 import styles from "./Products.module.scss";
 import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 
 export default function Products() {
   const { data, loading, error } = useProducts();
@@ -15,6 +16,13 @@ export default function Products() {
     return (
       <div className="container flex flexCenter">
         <Loader />
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="container flex flexCenter">
+        <ErrorMessage message={error} />
       </div>
     );
 

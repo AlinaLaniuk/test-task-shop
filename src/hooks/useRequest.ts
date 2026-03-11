@@ -33,7 +33,7 @@ export function useRequest<T>(request: () => Promise<T>) {
     };
 
     fetchData();
-  }, [request]);
+  }, []);
 
   return state;
 }

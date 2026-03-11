@@ -1,11 +1,11 @@
 "use client";
 
-import useAuth from "./useAuth";
+import useLogin from "./useLogin";
 import Button from "../../components/Button/Button";
 import styles from "./LoginForm.module.scss";
 
 export default function LoginFrom() {
-  const { username, updateUsername, password, updatePassword, onSubmit, authError } = useAuth();
+  const { username, updateUsername, password, updatePassword, onSubmit, authError } = useLogin();
   return (
     <form onSubmit={onSubmit} className={styles.form} noValidate>
       <input
