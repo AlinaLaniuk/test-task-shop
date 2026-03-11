@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.topbar}>
-        <div className="container">
+        <div className="container flex flexBetween">
           <ul className={styles.contactsContainer}>
             <li className={styles.topbarItem}>
               <PhoneIcon />
@@ -50,7 +50,7 @@ export default function Header() {
         </div>
       </div>
       <div className={styles.main}>
-        <div className="container">
+        <div className="container flex flexBetween">
           <h1>
             <Link href="/">
               Abelohost Shop <span className={styles.dot}>.</span>
@@ -60,7 +60,7 @@ export default function Header() {
         </div>
       </div>
       <div className={styles.nav}>
-        <div className="container">
+        <div className="container flex flexBetween">
           <nav>
             <ul className={styles.menu}>
               <Link href="/">Home</Link>
