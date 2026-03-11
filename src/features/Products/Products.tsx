@@ -27,7 +27,7 @@ export default function Products() {
     );
 
   return (
-    <div className="container flex flexBetween">
+    <div className="container flex flexCenter">
       <div className={styles.productsContainer}>
         {data?.map((product: Product) => (
           <Card

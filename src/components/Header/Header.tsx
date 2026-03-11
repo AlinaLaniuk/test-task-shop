@@ -7,6 +7,7 @@ import PhoneIcon from "../Icons/PhoneIcon";
 import PointerIcon from "../Icons/PointerIcon";
 import Link from "next/link";
 import styles from "./Header.module.scss";
+import Menu from "../Menu/Menu";
 
 interface HeaderProps {
   logout: () => void;
@@ -55,27 +56,13 @@ export default function Header({ logout, name = "", isAuth }: HeaderProps) {
         <div className="container flex flexBetween">
           <h1>
             <Link href="/">
-              Abelohost Shop <span className={styles.dot}>.</span>
+              Abelohost Shop <span>.</span>
             </Link>
           </h1>
           <div className={styles.banner}></div>
         </div>
       </div>
-      <div className={styles.nav}>
-        <div className="container flex flexBetween">
-          <nav>
-            <ul className={styles.menu}>
-              <Link href="/">Home</Link>
-              <li>Hot Deals</li>
-              <li>Categories</li>
-              <li>Laptops</li>
-              <li>Smartphones</li>
-              <li>Cameras</li>
-              <li>Accessories</li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      <Menu />
     </header>
   );
 }

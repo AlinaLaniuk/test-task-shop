@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .footer {
   height: 120px;
   display: flex;
@@ -7,4 +9,7 @@
   border-top: 4px solid var(--color-accent);
   color: var(--text-secondary);
   font-size: 25px;
+  @media (max-width: $bp-tablet) {
+    font-size: 16px;
+  }
 }

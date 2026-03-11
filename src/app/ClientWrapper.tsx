@@ -37,15 +37,13 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
   return (
     <div className="app-container">
       <ErrorBoundary>
-        <div className="app-container">
-          <Header
-            isAuth={Boolean(user)}
-            name={`${user?.firstName} ${user?.lastName}`}
-            logout={logout}
-          />
-          <main>{children}</main>
-          <Footer email={user?.email} />
-        </div>
+        <Header
+          isAuth={Boolean(user)}
+          name={`${user?.firstName} ${user?.lastName}`}
+          logout={logout}
+        />
+        <main>{children}</main>
+        <Footer email={user?.email} />
       </ErrorBoundary>
     </div>
   );

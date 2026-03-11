@@ -13,6 +13,7 @@ body,
 .app-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
 }
 
@@ -46,10 +47,21 @@ ul {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
 
-  @media (max-width: 768px) {
+  @media (max-width: $bp-mobile) {
+    width: 90%;
+  }
+
+  @media (max-width: $bp-tablet) {
     width: 95%;
+  }
+
+  @media (max-width: $bp-laptop) {
+    width: 98%;
+  }
+
+  @media (max-width: $bp-desktop) {
+    width: 90%;
   }
 }
 
@@ -65,4 +77,18 @@ ul {
 .flexCenter {
   justify-content: center;
   align-items: center;
+}
+
+:root {
+  --font-primary: #{$font-primary};
+  --bg-color: #{$bg-color};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-tertiary: #{$text-tertiary};
+  --color-accent: #{$color-accent};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --border-color: #{$border-color};
+  --border-radius: #{$border-radius};
+  --color-dangerous: #{$color-dangerous};
 }

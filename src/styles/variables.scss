@@ -9,17 +9,8 @@ $color-secondary: #1e1f29;
 $border-color: #f3f4f7;
 $border-radius: 7px;
 $color-dangerous: rgb(150, 0, 0);
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1200px;
 
-:root {
-  --font-primary: #{$font-primary};
-  --bg-color: #{$bg-color};
-  --text-primary: #{$text-primary};
-  --text-secondary: #{$text-secondary};
-  --text-tertiary: #{$text-tertiary};
-  --color-accent: #{$color-accent};
-  --color-primary: #{$color-primary};
-  --color-secondary: #{$color-secondary};
-  --border-color: #{$border-color};
-  --border-radius: #{$border-radius};
-  --color-dangerous: #{$color-dangerous};
-}

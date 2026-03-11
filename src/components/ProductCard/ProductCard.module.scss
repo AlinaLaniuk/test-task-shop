@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .card {
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -13,6 +15,9 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
+  @media (max-width: $bp-mobile) {
+    width: 60%;
+  }
 }
 
 .title {
