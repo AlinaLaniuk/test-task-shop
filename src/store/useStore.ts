@@ -10,5 +10,9 @@ interface UserState {
 export const useUserStore = create<UserState>((set) => ({
   user: null,
   setUser: (user) => set({ user }),
-  logout: () => set({ user: null }),
+  logout: () => {
+    set({ user: null });
+    localStorage.setItem("accessToken", "");
+    localStorage.setItem("refreshToken", "");
+  },
 }));

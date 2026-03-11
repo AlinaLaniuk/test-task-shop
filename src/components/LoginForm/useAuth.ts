@@ -29,7 +29,6 @@ export default function useAuth() {
     const response = await login({
       username: username.value,
       password: password.value,
-      expiresInMins: 5,
     });
 
     if (response.error) {
@@ -38,8 +37,6 @@ export default function useAuth() {
     }
     if (response.data) {
       setUser(response.data);
-      localStorage.setItem("accessToken", response.data.accessToken);
-      localStorage.setItem("refreshToken", response.data.refreshToken);
       router.push("/");
       setAuthError("");
       return;

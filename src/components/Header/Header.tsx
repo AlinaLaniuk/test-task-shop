@@ -6,16 +6,22 @@ import MailIcon from "../lib/Icons/MailIcon";
 import PhoneIcon from "../lib/Icons/PhoneIcon";
 import PointerIcon from "../lib/Icons/PointerIcon";
 import { useUserStore } from "../../store/useStore";
-import { LoginResponse } from "@/types/auth.types";
 import Link from "next/link";
 import styles from "./Header.module.scss";
 
 export default function Header() {
   const user = useUserStore((state) => state.user);
+  const logout = useUserStore((state) => state.logout);
   const router = useRouter();
 
-  const onClick = () => {
+  const handleLogin = () => {
     router.push("/login");
+  };
+
+  const handleLogout = () => {
+    logout();
+    console.log("user", user);
+    router.push("/");
   };
 
   return (
@@ -36,7 +42,11 @@ export default function Header() {
               1734 Stonecoal Road
             </li>
           </ul>
-          {user ? <User user={user} /> : <LoginButton onClick={onClick} />}
+          {user ? (
+            <User onClick={handleLogout} name={`${user.firstName} ${user.lastName}`} />
+          ) : (
+            <LoginButton onClick={handleLogin} />
+          )}
         </div>
       </div>
       <div className={styles.main}>
@@ -68,12 +78,12 @@ export default function Header() {
   );
 }
 
-function User({ user }: { user: LoginResponse }) {
+function User({ name, onClick }: { name: string; onClick: () => void }) {
   return (
-    <div className={styles.topbarItem}>
+    <button onClick={onClick} className={styles.topbarItem}>
       <LoginIcon />
-      {user?.firstName} {user?.lastName} | Logout
-    </div>
+      {name} | Logout
+    </button>
   );
 }
 
