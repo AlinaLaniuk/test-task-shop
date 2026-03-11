@@ -1,6 +1,7 @@
 "use client";
 
 import useAuth from "./useAuth";
+import Button from "../lib/Button/Button";
 import styles from "./LoginForm.module.scss";
 
 export default function LoginFrom() {
@@ -35,13 +36,13 @@ export default function LoginFrom() {
       <div className={styles.error}>
         {password.isError && <span>The form field must contain at least 3 characters.</span>}
       </div>
-      <button
+      <Button
         disabled={username.isError || password.isError}
         type="submit"
-        className={`${styles.button} ${styles.formItem} ${username.isError || password.isError ? styles.disabled : ""}`}
+        className={`${username.isError || password.isError ? styles.disabled : ""}`}
       >
         Login
-      </button>
+      </Button>
       <div className={styles.error}>
         <span>{authError}</span>
       </div>

@@ -5,9 +5,12 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
 };
 
-export default function Button({ size = "m", children, ...props }: ButtonProps) {
+export default function Button({ size = "m", children, className = "", ...props }: ButtonProps) {
   return (
-    <button className={`${styles.button} ${styles[`size${size.toUpperCase()}`]}`} {...props}>
+    <button
+      className={`${styles.button} ${styles[`size${size.toUpperCase()}`]} ${className}`}
+      {...props}
+    >
       {children}
     </button>
   );
