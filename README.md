@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Команды для сборки и запуска**
 
-## Getting Started
+**Собрать образ**
+docker build -t test-task-shop .
 
-First, run the development server:
+**Запустить контейнер**
+docker run -p 3000:3000 test-task-shop
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Ответы на вопросы к тестовому:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Какие сложности, если они были, возникли при выполнении тестового задания?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Особых сложностей в реализации не возникло. Основной вызов заключался в работе с некоторыми технологиями, которые я использовала нечасто в последнее время. Все задачи удалось успешно реализовать в срок.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Как вы оцениваете полноту и качество своей реализации?
 
-## Learn More
+Считаю, что все требования тестового задания выполнены в полном объёме. Приложение структурировано, код типизирован с использованием TypeScript, соблюдены стандарты качества (ESLint, Prettier, Stylelint). Функционал авторизации и отображения товаров работает корректно, а интерфейс адаптивен для мобильных и десктопных устройств.
 
-To learn more about Next.js, take a look at the following resources:
+3. Если бы это был production-проект и у вас было больше времени, какие изменения или доработки вы бы внесли?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Если бы это был production-проект, я бы добавила расширенные возможности работы со списками товаров: фильтры по категориям и цене, сортировку, поиск по названию, а также пагинацию для улучшения навигации и удобства пользователей. Также можно было бы улучшить UI/UX и добавить тесты.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Уточните пожалуйста, использовали ли вы ИИ при выполнении и если использовали, то для чего конкретно. Это важно для корректной оценки.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Да, использовала ИИ в режиме чата для уточнения некоторых деталей реализации и получения советов по конфигурации Next.js и Docker. Код сгенерирован ИИ не был, все компоненты и логика написаны самостоятельно.
