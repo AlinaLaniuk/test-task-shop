@@ -10,6 +10,18 @@ body,
   color: $text-primary;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 1rem;
+  background: #f5f5f5;
+}
+
 a {
   text-decoration: none;
   color: inherit;
