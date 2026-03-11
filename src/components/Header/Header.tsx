@@ -7,6 +7,7 @@ import PhoneIcon from "../lib/Icons/PhoneIcon";
 import PointerIcon from "../lib/Icons/PointerIcon";
 import { useUserStore } from "../../store/useStore";
 import { LoginResponse } from "@/types/auth.types";
+import Link from "next/link";
 import styles from "./Header.module.scss";
 
 export default function Header() {
@@ -41,7 +42,9 @@ export default function Header() {
       <div className={styles.main}>
         <div className="container">
           <h1>
-            Abelohost Shop <span className={styles.dot}>.</span>
+            <Link href="/">
+              Abelohost Shop <span className={styles.dot}>.</span>
+            </Link>
           </h1>
           <div className={styles.banner}></div>
         </div>
@@ -50,7 +53,7 @@ export default function Header() {
         <div className="container">
           <nav>
             <ul className={styles.menu}>
-              <li>Home</li>
+              <Link href="/">Home</Link>
               <li>Hot Deals</li>
               <li>Categories</li>
               <li>Laptops</li>
@@ -69,7 +72,7 @@ function User({ user }: { user: LoginResponse }) {
   return (
     <div className={styles.topbarItem}>
       <LoginIcon />
-      {user?.firstName} {user?.lastName}
+      {user?.firstName} {user?.lastName} | Logout
     </div>
   );
 }
