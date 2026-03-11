@@ -1,4 +1,3 @@
-import "../../styles/variables.scss";
 import IconContainer from "./IconContainer/IconContainer";
 import { IconProps } from "./types";
 

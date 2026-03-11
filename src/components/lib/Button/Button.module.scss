@@ -1,0 +1,25 @@
+$button-sizes: (
+  s: 30px,
+  m: 50px,
+  l: 70px,
+);
+
+.button {
+  background-color: var(--color-primary);
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 5px;
+}
+
+.sizeS {
+  height: map-get($button-sizes, s);
+}
+.sizeM {
+  height: map-get($button-sizes, m);
+}
+.sizeL {
+  height: map-get($button-sizes, l);
+}
